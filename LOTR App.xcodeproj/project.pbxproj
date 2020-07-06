@@ -77,12 +77,9 @@
 		7F9610BE24B32BFC0023C306 /* LOTR App */ = {
 			isa = PBXGroup;
 			children = (
-				7F9610BF24B32BFC0023C306 /* AppDelegate.swift */,
+				7F9610E124B3307D0023C306 /* System */,
 				7F9610C324B32BFC0023C306 /* ViewController.swift */,
 				7F9610C524B32BFC0023C306 /* Main.storyboard */,
-				7F9610C824B32BFE0023C306 /* Assets.xcassets */,
-				7F9610CA24B32BFE0023C306 /* LaunchScreen.storyboard */,
-				7F9610CD24B32BFE0023C306 /* Info.plist */,
 			);
 			path = "LOTR App";
 			sourceTree = "<group>";
@@ -94,6 +91,17 @@
 				7F9610D824B32BFE0023C306 /* Info.plist */,
 			);
 			path = "LOTR AppTests";
+			sourceTree = "<group>";
+		};
+		7F9610E124B3307D0023C306 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				7F9610CA24B32BFE0023C306 /* LaunchScreen.storyboard */,
+				7F9610BF24B32BFC0023C306 /* AppDelegate.swift */,
+				7F9610CD24B32BFE0023C306 /* Info.plist */,
+				7F9610C824B32BFE0023C306 /* Assets.xcassets */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BY986JF6MT;
-				INFOPLIST_FILE = "LOTR App/Info.plist";
+				INFOPLIST_FILE = "LOTR App/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BY986JF6MT;
-				INFOPLIST_FILE = "LOTR App/Info.plist";
+				INFOPLIST_FILE = "LOTR App/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
