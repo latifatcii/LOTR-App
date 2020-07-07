@@ -1,20 +1,17 @@
 //
-//  ViewController.swift
+//  BookListViewController.swift
 //  LOTR App
 //
-//  Created by Latif Atci on 7/6/20.
+//  Created by Latif Atci on 7/7/20.
 //  Copyright © 2020 Latif Atci. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class BookListViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .brown
     }
-
-
 }
-
