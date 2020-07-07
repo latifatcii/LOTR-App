@@ -1,13 +1,17 @@
 {
-    "_id": "5cd99d4bde30eff6ebccfdf3",
-    "height": "",
-    "race": "Human",
-    "gender": "Male",
-    "birth": "SA 192",
-    "spouse": "Unnamed wife",
-    "death": "SA 603",
-    "realm": "Númenor",
-    "hair": "",
-    "name": "Tar-Amandil",
-    "wikiUrl": "http://lotr.wikia.com//wiki/Tar-Amandil"
+    "docs": [
+        {
+            "_id": "5cd99d4bde30eff6ebccfdf3",
+            "height": "",
+            "race": "Human",
+            "gender": "Male",
+            "birth": "SA 192",
+            "spouse": "Unnamed wife",
+            "death": "SA 603",
+            "realm": "Númenor",
+            "hair": "",
+            "name": "Tar-Amandil",
+            "wikiUrl": "http://lotr.wikia.com//wiki/Tar-Amandil"
+        }
+    ]
 }

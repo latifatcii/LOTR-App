@@ -1,4 +1,8 @@
 {
-    "_id": "5cdc25d4bc17e929cf2461eb",
-    "book": "5cf5805fb53e011a64671582"
+    "docs": [
+        {
+            "_id": "5cdc25d4bc17e929cf2461eb",
+            "book": "5cf5805fb53e011a64671582"
+        }
+    ]
 }
