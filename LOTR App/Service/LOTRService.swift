@@ -41,11 +41,11 @@ class LOTRService: LOTRServiceProtocol {
         
         URLSession.shared.dataTask(with: requestType.createURLRequest()!) { (data, _, error) in
             if let _ = error {
-                completion(.failure(.badRequest))
+                completion(.failure(.failed))
             }
             print(requestType.createURLString())
             guard let data = data else {
-                completion(.failure(.unableToDecode))
+                completion(.failure(.badRequest))
                 return
             }
             print(data)
@@ -54,7 +54,7 @@ class LOTRService: LOTRServiceProtocol {
                 let response = try decoder.decode(T.self, from: data)
                 completion(.success(response))
             } catch {
-                completion(.failure(.failed))
+                completion(.failure(.unableToDecode))
             }
         }.resume()
     }
