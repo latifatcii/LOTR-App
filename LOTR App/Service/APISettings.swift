@@ -51,7 +51,7 @@ extension APISetting {
         components.host = host
         components.path = path
         
-        let token = "xne8nH1yI9iReXv2XoYb"
+        let token = "Bearer xne8nH1yI9iReXv2XoYb"
         if let url = components.url {
             var request = URLRequest(url: url)
             request.addValue(token, forHTTPHeaderField: "Authorization")
