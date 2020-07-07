@@ -28,6 +28,11 @@
 		7F9610FF24B34D0E0023C306 /* ChapterResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610FE24B34D0E0023C306 /* ChapterResponses.swift */; };
 		7F96110124B34D3C0023C306 /* CharacterResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96110024B34D3C0023C306 /* CharacterResponses.swift */; };
 		7F96110324B454490023C306 /* APISettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96110224B454490023C306 /* APISettingsTests.swift */; };
+		7F96110824B4566D0023C306 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F96110724B4566D0023C306 /* book.json */; };
+		7F96110A24B456930023C306 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F96110924B456930023C306 /* movie.json */; };
+		7F96110C24B456AE0023C306 /* quote.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F96110B24B456AE0023C306 /* quote.json */; };
+		7F96110E24B456C90023C306 /* chapter.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F96110D24B456C90023C306 /* chapter.json */; };
+		7F96111024B456DF0023C306 /* character.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F96110F24B456DF0023C306 /* character.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +71,11 @@
 		7F9610FE24B34D0E0023C306 /* ChapterResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterResponses.swift; sourceTree = "<group>"; };
 		7F96110024B34D3C0023C306 /* CharacterResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponses.swift; sourceTree = "<group>"; };
 		7F96110224B454490023C306 /* APISettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettingsTests.swift; sourceTree = "<group>"; };
+		7F96110724B4566D0023C306 /* book.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
+		7F96110924B456930023C306 /* movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		7F96110B24B456AE0023C306 /* quote.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quote.json; sourceTree = "<group>"; };
+		7F96110D24B456C90023C306 /* chapter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chapter.json; sourceTree = "<group>"; };
+		7F96110F24B456DF0023C306 /* character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = character.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,8 +203,21 @@
 		7F96110524B455FD0023C306 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7F96110624B456550023C306 /* JSON */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7F96110624B456550023C306 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7F96110724B4566D0023C306 /* book.json */,
+				7F96110924B456930023C306 /* movie.json */,
+				7F96110B24B456AE0023C306 /* quote.json */,
+				7F96110D24B456C90023C306 /* chapter.json */,
+				7F96110F24B456DF0023C306 /* character.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +311,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F96111024B456DF0023C306 /* character.json in Resources */,
+				7F96110C24B456AE0023C306 /* quote.json in Resources */,
+				7F96110A24B456930023C306 /* movie.json in Resources */,
+				7F96110824B4566D0023C306 /* book.json in Resources */,
+				7F96110E24B456C90023C306 /* chapter.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
