@@ -13,6 +13,20 @@
 		7F9610C924B32BFE0023C306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9610C824B32BFE0023C306 /* Assets.xcassets */; };
 		7F9610CC24B32BFE0023C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9610CA24B32BFE0023C306 /* LaunchScreen.storyboard */; };
 		7F9610D724B32BFE0023C306 /* LOTR_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610D624B32BFE0023C306 /* LOTR_AppTests.swift */; };
+		7F9610E424B3319E0023C306 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610E324B3319E0023C306 /* APIErrors.swift */; };
+		7F9610E624B331A90023C306 /* APISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610E524B331A90023C306 /* APISettings.swift */; };
+		7F9610E824B331C40023C306 /* LOTRApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610E724B331C40023C306 /* LOTRApi.swift */; };
+		7F9610EA24B331D30023C306 /* LOTRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610E924B331D30023C306 /* LOTRService.swift */; };
+		7F9610ED24B3394C0023C306 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610EC24B3394C0023C306 /* Books.swift */; };
+		7F9610F124B33C2C0023C306 /* BooksResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610F024B33C2C0023C306 /* BooksResponses.swift */; };
+		7F9610F324B348DB0023C306 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610F224B348DB0023C306 /* Quote.swift */; };
+		7F9610F524B349060023C306 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610F424B349060023C306 /* Movie.swift */; };
+		7F9610F724B34B6A0023C306 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610F624B34B6A0023C306 /* Chapter.swift */; };
+		7F9610F924B34C730023C306 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610F824B34C730023C306 /* Character.swift */; };
+		7F9610FB24B34CA80023C306 /* QuoteResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610FA24B34CA80023C306 /* QuoteResponses.swift */; };
+		7F9610FD24B34CD50023C306 /* MovieResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610FC24B34CD50023C306 /* MovieResponses.swift */; };
+		7F9610FF24B34D0E0023C306 /* ChapterResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610FE24B34D0E0023C306 /* ChapterResponses.swift */; };
+		7F96110124B34D3C0023C306 /* CharacterResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96110024B34D3C0023C306 /* CharacterResponses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +50,20 @@
 		7F9610D224B32BFE0023C306 /* LOTR AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LOTR AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9610D624B32BFE0023C306 /* LOTR_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTR_AppTests.swift; sourceTree = "<group>"; };
 		7F9610D824B32BFE0023C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F9610E324B3319E0023C306 /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		7F9610E524B331A90023C306 /* APISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettings.swift; sourceTree = "<group>"; };
+		7F9610E724B331C40023C306 /* LOTRApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTRApi.swift; sourceTree = "<group>"; };
+		7F9610E924B331D30023C306 /* LOTRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTRService.swift; sourceTree = "<group>"; };
+		7F9610EC24B3394C0023C306 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		7F9610F024B33C2C0023C306 /* BooksResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksResponses.swift; sourceTree = "<group>"; };
+		7F9610F224B348DB0023C306 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		7F9610F424B349060023C306 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7F9610F624B34B6A0023C306 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		7F9610F824B34C730023C306 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		7F9610FA24B34CA80023C306 /* QuoteResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteResponses.swift; sourceTree = "<group>"; };
+		7F9610FC24B34CD50023C306 /* MovieResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponses.swift; sourceTree = "<group>"; };
+		7F9610FE24B34D0E0023C306 /* ChapterResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterResponses.swift; sourceTree = "<group>"; };
+		7F96110024B34D3C0023C306 /* CharacterResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +105,8 @@
 		7F9610BE24B32BFC0023C306 /* LOTR App */ = {
 			isa = PBXGroup;
 			children = (
+				7F9610EB24B339300023C306 /* Model */,
+				7F9610E224B331700023C306 /* Service */,
 				7F9610E124B3307D0023C306 /* System */,
 				7F9610C324B32BFC0023C306 /* ViewController.swift */,
 				7F9610C524B32BFC0023C306 /* Main.storyboard */,
@@ -102,6 +132,50 @@
 				7F9610C824B32BFE0023C306 /* Assets.xcassets */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		7F9610E224B331700023C306 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7F9610E324B3319E0023C306 /* APIErrors.swift */,
+				7F9610E524B331A90023C306 /* APISettings.swift */,
+				7F9610E724B331C40023C306 /* LOTRApi.swift */,
+				7F9610E924B331D30023C306 /* LOTRService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7F9610EB24B339300023C306 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F9610EF24B33C120023C306 /* Responses */,
+				7F9610EE24B33C0C0023C306 /* DTOs */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F9610EE24B33C0C0023C306 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				7F9610EC24B3394C0023C306 /* Books.swift */,
+				7F9610F224B348DB0023C306 /* Quote.swift */,
+				7F9610F424B349060023C306 /* Movie.swift */,
+				7F9610F624B34B6A0023C306 /* Chapter.swift */,
+				7F9610F824B34C730023C306 /* Character.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		7F9610EF24B33C120023C306 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				7F9610F024B33C2C0023C306 /* BooksResponses.swift */,
+				7F9610FA24B34CA80023C306 /* QuoteResponses.swift */,
+				7F9610FC24B34CD50023C306 /* MovieResponses.swift */,
+				7F9610FE24B34D0E0023C306 /* ChapterResponses.swift */,
+				7F96110024B34D3C0023C306 /* CharacterResponses.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +281,20 @@
 			files = (
 				7F9610C424B32BFC0023C306 /* ViewController.swift in Sources */,
 				7F9610C024B32BFC0023C306 /* AppDelegate.swift in Sources */,
+				7F96110124B34D3C0023C306 /* CharacterResponses.swift in Sources */,
+				7F9610FF24B34D0E0023C306 /* ChapterResponses.swift in Sources */,
+				7F9610ED24B3394C0023C306 /* Books.swift in Sources */,
+				7F9610F924B34C730023C306 /* Character.swift in Sources */,
+				7F9610FB24B34CA80023C306 /* QuoteResponses.swift in Sources */,
+				7F9610EA24B331D30023C306 /* LOTRService.swift in Sources */,
+				7F9610F524B349060023C306 /* Movie.swift in Sources */,
+				7F9610F324B348DB0023C306 /* Quote.swift in Sources */,
+				7F9610E424B3319E0023C306 /* APIErrors.swift in Sources */,
+				7F9610FD24B34CD50023C306 /* MovieResponses.swift in Sources */,
+				7F9610E624B331A90023C306 /* APISettings.swift in Sources */,
+				7F9610E824B331C40023C306 /* LOTRApi.swift in Sources */,
+				7F9610F124B33C2C0023C306 /* BooksResponses.swift in Sources */,
+				7F9610F724B34B6A0023C306 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
