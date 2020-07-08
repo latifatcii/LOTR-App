@@ -45,6 +45,7 @@ extension APISetting {
         return "\(scheme)://\(host)\(path)"
     }
     
+    //Creates Url Request for service
     func createURLRequest() -> URLRequest? {
         var components = URLComponents()
         components.scheme = scheme

@@ -15,12 +15,12 @@ class BookListViewController: UIViewController {
     //Select index
     @IBOutlet weak var tableView: UITableView!
     
+    //Sets viewModels delegate
     var viewModel: BookListViewModelProtocol! {
         didSet {
             viewModel.delegate = self
         }
     }
-    
     let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class BookListViewController: UIViewController {
         configureActivityIndicator()
     }
 }
-
+// Handle output from viewModel
 extension BookListViewController: BookListViewModelDelegate {
     func handleViewModelOutput(_ output: BookListViewModelOutput) {
         DispatchQueue.main.async {

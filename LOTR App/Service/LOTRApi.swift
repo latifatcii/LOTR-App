@@ -16,6 +16,7 @@ enum RequestType {
     case character
 }
 
+// Creates paths depends on request type
 extension RequestType: APISetting {
     var path: String {
         switch self {

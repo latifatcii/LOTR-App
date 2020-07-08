@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol LOTRServiceProtocol {
     func fetchBooks(completion: @escaping (Result<BooksResponses,NetworkResponse>) -> Void)
     func fetchQuote(completion: @escaping (Result<QuoteResponses,NetworkResponse>) -> Void)
@@ -37,6 +38,7 @@ class LOTRService: LOTRServiceProtocol {
         apiRequest(RequestType.character, completion: completion)
     }
     
+    //Send request to api and decode the result
     func apiRequest<T: Decodable>(_ requestType: RequestType, completion: @escaping (Result<T,NetworkResponse>) -> Void) {
         
         URLSession.shared.dataTask(with: requestType.createURLRequest()!) { (data, _, error) in

@@ -9,7 +9,7 @@
 import UIKit
 
 final class BookListSceneBuilder {
-    
+    //Build BookListViewController with storyboard
     static func build() -> BookListViewController {
         let storyboard = UIStoryboard(name: "BookList", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
