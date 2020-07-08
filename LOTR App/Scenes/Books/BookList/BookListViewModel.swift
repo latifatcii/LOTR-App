@@ -14,6 +14,7 @@ final class BookListViewModel: BookListViewModelProtocol {
     weak var delegate: BookListViewModelDelegate?
     private let service: LOTRServiceProtocol
     var books: [BookPresentation] = []
+    
     init(_ service: LOTRServiceProtocol = LOTRService()) {
         self.service = service
     }
@@ -36,5 +37,8 @@ final class BookListViewModel: BookListViewModelProtocol {
         }
     }
     
+    func deleteRow(at indexPath: IndexPath) {
+        books.remove(at: indexPath.row)
+    }
     
 }
