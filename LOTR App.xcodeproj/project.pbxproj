@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F9610C024B32BFC0023C306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610BF24B32BFC0023C306 /* AppDelegate.swift */; };
-		7F9610C424B32BFC0023C306 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610C324B32BFC0023C306 /* ViewController.swift */; };
-		7F9610C724B32BFC0023C306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9610C524B32BFC0023C306 /* Main.storyboard */; };
+		7F9610C724B32BFC0023C306 /* BookList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9610C524B32BFC0023C306 /* BookList.storyboard */; };
 		7F9610C924B32BFE0023C306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9610C824B32BFE0023C306 /* Assets.xcassets */; };
 		7F9610CC24B32BFE0023C306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9610CA24B32BFE0023C306 /* LaunchScreen.storyboard */; };
 		7F9610D724B32BFE0023C306 /* LOTR_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9610D624B32BFE0023C306 /* LOTR_AppTests.swift */; };
@@ -35,6 +34,15 @@
 		7F96111024B456DF0023C306 /* character.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F96110F24B456DF0023C306 /* character.json */; };
 		7F96111224B46AF20023C306 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111124B46AF20023C306 /* MockService.swift */; };
 		7F96111424B46C1D0023C306 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111324B46C1D0023C306 /* ResourceLoader.swift */; };
+		7F96111A24B487AA0023C306 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111924B487AA0023C306 /* BookListViewController.swift */; };
+		7F96111C24B487B50023C306 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111B24B487B50023C306 /* BookListViewModel.swift */; };
+		7F96111F24B48AA30023C306 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111E24B48AA30023C306 /* TabBarController.swift */; };
+		7F96112324B48CB30023C306 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112224B48CB30023C306 /* AppRouter.swift */; };
+		7F96112724B5A5440023C306 /* BookPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112624B5A5440023C306 /* BookPresentation.swift */; };
+		7F96112924B5A65C0023C306 /* BookListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112824B5A65C0023C306 /* BookListContracts.swift */; };
+		7F96112C24B5AAB70023C306 /* BookListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112B24B5AAB70023C306 /* BookListViewModelTests.swift */; };
+		7F96112F24B5D8560023C306 /* BookListSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112E24B5D8560023C306 /* BookListSceneBuilder.swift */; };
+		7F96113124B5E19C0023C306 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96113024B5E19C0023C306 /* UIViewController + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +58,7 @@
 /* Begin PBXFileReference section */
 		7F9610BC24B32BFC0023C306 /* LOTR App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LOTR App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9610BF24B32BFC0023C306 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F9610C324B32BFC0023C306 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7F9610C624B32BFC0023C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F9610C624B32BFC0023C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BookList.storyboard; sourceTree = "<group>"; };
 		7F9610C824B32BFE0023C306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F9610CB24B32BFE0023C306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9610CD24B32BFE0023C306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +87,15 @@
 		7F96110F24B456DF0023C306 /* character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = character.json; sourceTree = "<group>"; };
 		7F96111124B46AF20023C306 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		7F96111324B46C1D0023C306 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		7F96111924B487AA0023C306 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		7F96111B24B487B50023C306 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
+		7F96111E24B48AA30023C306 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7F96112224B48CB30023C306 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		7F96112624B5A5440023C306 /* BookPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresentation.swift; sourceTree = "<group>"; };
+		7F96112824B5A65C0023C306 /* BookListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListContracts.swift; sourceTree = "<group>"; };
+		7F96112B24B5AAB70023C306 /* BookListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModelTests.swift; sourceTree = "<group>"; };
+		7F96112E24B5D8560023C306 /* BookListSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListSceneBuilder.swift; sourceTree = "<group>"; };
+		7F96113024B5E19C0023C306 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +137,12 @@
 		7F9610BE24B32BFC0023C306 /* LOTR App */ = {
 			isa = PBXGroup;
 			children = (
+				7F96112424B5A5330023C306 /* Common */,
+				7F9610E124B3307D0023C306 /* System */,
 				7F9610EB24B339300023C306 /* Model */,
 				7F9610E224B331700023C306 /* Service */,
-				7F9610E124B3307D0023C306 /* System */,
-				7F9610C324B32BFC0023C306 /* ViewController.swift */,
-				7F9610C524B32BFC0023C306 /* Main.storyboard */,
+				7F96112D24B5D8250023C306 /* SceneBuilders */,
+				7F96111524B4859A0023C306 /* Scenes */,
 			);
 			path = "LOTR App";
 			sourceTree = "<group>";
@@ -134,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				7F96110424B455F20023C306 /* ServiceTests */,
+				7F96112A24B5AA8E0023C306 /* ViewModelTests */,
 				7F9610D824B32BFE0023C306 /* Info.plist */,
-				7F96110224B454490023C306 /* APISettingsTests.swift */,
 			);
 			path = "LOTR AppTests";
 			sourceTree = "<group>";
@@ -200,6 +217,7 @@
 			children = (
 				7F96110524B455FD0023C306 /* Resources */,
 				7F9610D624B32BFE0023C306 /* LOTR_AppTests.swift */,
+				7F96110224B454490023C306 /* APISettingsTests.swift */,
 			);
 			path = ServiceTests;
 			sourceTree = "<group>";
@@ -224,6 +242,84 @@
 				7F96110F24B456DF0023C306 /* character.json */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		7F96111524B4859A0023C306 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7F96111D24B489BD0023C306 /* Root */,
+				7F96111624B485E20023C306 /* Books */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7F96111624B485E20023C306 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				7F96111724B486940023C306 /* BookList */,
+				7F96111824B486EA0023C306 /* BookDetail */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		7F96111724B486940023C306 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				7F9610C524B32BFC0023C306 /* BookList.storyboard */,
+				7F96111924B487AA0023C306 /* BookListViewController.swift */,
+				7F96111B24B487B50023C306 /* BookListViewModel.swift */,
+				7F96112824B5A65C0023C306 /* BookListContracts.swift */,
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		7F96111824B486EA0023C306 /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		7F96111D24B489BD0023C306 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7F96111E24B48AA30023C306 /* TabBarController.swift */,
+				7F96112224B48CB30023C306 /* AppRouter.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		7F96112424B5A5330023C306 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7F96112524B5A5390023C306 /* Presentations */,
+				7F96113024B5E19C0023C306 /* UIViewController + Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7F96112524B5A5390023C306 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				7F96112624B5A5440023C306 /* BookPresentation.swift */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
+		7F96112A24B5AA8E0023C306 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F96112B24B5AAB70023C306 /* BookListViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		7F96112D24B5D8250023C306 /* SceneBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				7F96112E24B5D8560023C306 /* BookListSceneBuilder.swift */,
+			);
+			path = SceneBuilders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +405,7 @@
 			files = (
 				7F9610CC24B32BFE0023C306 /* LaunchScreen.storyboard in Resources */,
 				7F9610C924B32BFE0023C306 /* Assets.xcassets in Resources */,
-				7F9610C724B32BFC0023C306 /* Main.storyboard in Resources */,
+				7F9610C724B32BFC0023C306 /* BookList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,15 +428,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9610C424B32BFC0023C306 /* ViewController.swift in Sources */,
+				7F96111A24B487AA0023C306 /* BookListViewController.swift in Sources */,
 				7F9610C024B32BFC0023C306 /* AppDelegate.swift in Sources */,
+				7F96113124B5E19C0023C306 /* UIViewController + Extensions.swift in Sources */,
+				7F96112324B48CB30023C306 /* AppRouter.swift in Sources */,
 				7F96110124B34D3C0023C306 /* CharacterResponses.swift in Sources */,
+				7F96111F24B48AA30023C306 /* TabBarController.swift in Sources */,
 				7F9610FF24B34D0E0023C306 /* ChapterResponses.swift in Sources */,
+				7F96112924B5A65C0023C306 /* BookListContracts.swift in Sources */,
+				7F96111C24B487B50023C306 /* BookListViewModel.swift in Sources */,
 				7F9610ED24B3394C0023C306 /* Books.swift in Sources */,
 				7F9610F924B34C730023C306 /* Character.swift in Sources */,
 				7F9610FB24B34CA80023C306 /* QuoteResponses.swift in Sources */,
 				7F9610EA24B331D30023C306 /* LOTRService.swift in Sources */,
 				7F9610F524B349060023C306 /* Movie.swift in Sources */,
+				7F96112F24B5D8560023C306 /* BookListSceneBuilder.swift in Sources */,
+				7F96112724B5A5440023C306 /* BookPresentation.swift in Sources */,
 				7F9610F324B348DB0023C306 /* Quote.swift in Sources */,
 				7F9610E424B3319E0023C306 /* APIErrors.swift in Sources */,
 				7F9610FD24B34CD50023C306 /* MovieResponses.swift in Sources */,
@@ -358,6 +461,7 @@
 				7F9610D724B32BFE0023C306 /* LOTR_AppTests.swift in Sources */,
 				7F96110324B454490023C306 /* APISettingsTests.swift in Sources */,
 				7F96111424B46C1D0023C306 /* ResourceLoader.swift in Sources */,
+				7F96112C24B5AAB70023C306 /* BookListViewModelTests.swift in Sources */,
 				7F96111224B46AF20023C306 /* MockService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,12 +477,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7F9610C524B32BFC0023C306 /* Main.storyboard */ = {
+		7F9610C524B32BFC0023C306 /* BookList.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7F9610C624B32BFC0023C306 /* Base */,
 			);
-			name = Main.storyboard;
+			name = BookList.storyboard;
 			sourceTree = "<group>";
 		};
 		7F9610CA24B32BFE0023C306 /* LaunchScreen.storyboard */ = {
@@ -520,7 +624,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.latifatci.LOTR-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -538,7 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.latifatci.LOTR-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
