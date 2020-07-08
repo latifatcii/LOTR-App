@@ -13,6 +13,7 @@ protocol BookListViewModelProtocol {
     var books: [BookPresentation] { get set }
     func loadData()
     func deleteRow(at indexPath: IndexPath)
+    func refreshData()
 }
 
 enum BookListViewModelOutput: Equatable {

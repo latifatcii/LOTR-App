@@ -11,7 +11,6 @@ import UIKit
 class BookListViewController: BaseViewController {
     
     //TODO
-    //Swipe delete
     //Refresh and update
     //Select index
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +26,8 @@ class BookListViewController: BaseViewController {
         super.viewDidLoad()
         viewModel.loadData()
         configureTableView()
+        tableView.refreshControl = refreshController
+        configureRefreshController()
     }
 }
 // Handle output from viewModel
@@ -50,6 +51,16 @@ extension BookListViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    private func configureRefreshController() {
+        refreshController.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc func refresh() {
+        viewModel.refreshData()
+        tableView.reloadData()
+        refreshController.endRefreshing()
     }
 }
 

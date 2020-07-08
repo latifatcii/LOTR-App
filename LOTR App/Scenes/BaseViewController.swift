@@ -11,7 +11,8 @@ import UIKit
 class BaseViewController: UIViewController {
     
     let activityIndicator = UIActivityIndicatorView()
-
+    let refreshController = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureActivityIndicator()

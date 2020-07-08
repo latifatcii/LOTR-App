@@ -41,4 +41,9 @@ final class BookListViewModel: BookListViewModelProtocol {
         books.remove(at: indexPath.row)
     }
     
+    func refreshData() {
+        books.removeAll()
+        loadData()
+    }
+    
 }
