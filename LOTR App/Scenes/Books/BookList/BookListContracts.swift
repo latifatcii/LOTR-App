@@ -10,13 +10,14 @@ import Foundation
 
 protocol BookListViewModelProtocol {
     var delegate: BookListViewModelDelegate? { get set }
+    var books: [BookPresentation] { get set }
     func loadData()
 }
 
 enum BookListViewModelOutput: Equatable {
     case setLoading(Bool)
     case error(NetworkResponse)
-    case showBookList([BookPresentation])
+    case showBookList
 }
 
 protocol BookListViewModelDelegate: class {

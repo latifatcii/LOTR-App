@@ -13,7 +13,7 @@ final class BookListViewModel: BookListViewModelProtocol {
     
     weak var delegate: BookListViewModelDelegate?
     private let service: LOTRServiceProtocol
-    
+    var books: [BookPresentation] = []
     init(_ service: LOTRServiceProtocol = LOTRService()) {
         self.service = service
     }
@@ -28,8 +28,8 @@ final class BookListViewModel: BookListViewModelProtocol {
             
             switch result {
             case .success(let response):
-                let bookPresentations = response.books.map { BookPresentation(book: $0) }
-                self.delegate?.handleViewModelOutput(.showBookList(bookPresentations))
+                self.books = response.books.map { BookPresentation(book: $0) }
+                self.delegate?.handleViewModelOutput(.showBookList)
             case .failure(let error):
                 self.delegate?.handleViewModelOutput(.error(error))
             }

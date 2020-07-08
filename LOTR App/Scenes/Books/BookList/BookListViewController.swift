@@ -10,6 +10,9 @@ import UIKit
 
 class BookListViewController: UIViewController {
     
+    //Swipe delete
+    //Refresh and update
+    //Select index
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: BookListViewModelProtocol! {
@@ -19,7 +22,6 @@ class BookListViewController: UIViewController {
     }
     
     let activityIndicator = UIActivityIndicatorView()
-    var books: [BookPresentation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +41,7 @@ extension BookListViewController: BookListViewModelDelegate {
                 } else {
                     self.activityIndicator.stopAnimating()
                 }
-            case .showBookList(let bookList):
-                self.books = bookList
+            case .showBookList:
                     self.tableView.reloadData()
             case .error(let error):
                 
@@ -74,13 +75,13 @@ extension BookListViewController: UITableViewDelegate {
 extension BookListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return viewModel.books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath)
-        cell.textLabel?.text = books[indexPath.row].name
-        cell.detailTextLabel?.text = books[indexPath.row].id
+        cell.textLabel?.text = viewModel.books[indexPath.row].name
+        cell.detailTextLabel?.text = viewModel.books[indexPath.row].id
         
         return cell
     }
