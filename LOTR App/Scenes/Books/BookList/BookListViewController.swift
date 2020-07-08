@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookListViewController: UIViewController {
+class BookListViewController: BaseViewController {
     
     //Swipe delete
     //Refresh and update
@@ -21,13 +21,11 @@ class BookListViewController: UIViewController {
             viewModel.delegate = self
         }
     }
-    let activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loadData()
         configureTableView()
-        configureActivityIndicator()
     }
 }
 // Handle output from viewModel
@@ -36,15 +34,10 @@ extension BookListViewController: BookListViewModelDelegate {
         DispatchQueue.main.async {
             switch output {
             case .setLoading(let loading):
-                if loading {
-                    self.activityIndicator.startAnimating()
-                } else {
-                    self.activityIndicator.stopAnimating()
-                }
+                self.setActivityIndicatorAnimation(with: loading)
             case .showBookList:
-                    self.tableView.reloadData()
+                self.tableView.reloadData()
             case .error(let error):
-                
                 self.showAlert(with: "Error!!", error.rawValue)
             }
         }
@@ -56,15 +49,6 @@ extension BookListViewController {
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    private func configureActivityIndicator() {
-        view.addSubview(activityIndicator)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        activityIndicator.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        activityIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        activityIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }
 
