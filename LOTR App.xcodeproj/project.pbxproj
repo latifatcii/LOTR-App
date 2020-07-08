@@ -38,6 +38,8 @@
 		7F96111C24B487B50023C306 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111B24B487B50023C306 /* BookListViewModel.swift */; };
 		7F96111F24B48AA30023C306 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96111E24B48AA30023C306 /* TabBarController.swift */; };
 		7F96112324B48CB30023C306 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112224B48CB30023C306 /* AppRouter.swift */; };
+		7F96112724B5A5440023C306 /* BookPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112624B5A5440023C306 /* BookPresentation.swift */; };
+		7F96112924B5A65C0023C306 /* BookListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112824B5A65C0023C306 /* BookListContracts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		7F96111B24B487B50023C306 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 		7F96111E24B48AA30023C306 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7F96112224B48CB30023C306 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		7F96112624B5A5440023C306 /* BookPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPresentation.swift; sourceTree = "<group>"; };
+		7F96112824B5A65C0023C306 /* BookListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListContracts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +131,10 @@
 		7F9610BE24B32BFC0023C306 /* LOTR App */ = {
 			isa = PBXGroup;
 			children = (
+				7F96112424B5A5330023C306 /* Common */,
+				7F9610E124B3307D0023C306 /* System */,
 				7F9610EB24B339300023C306 /* Model */,
 				7F9610E224B331700023C306 /* Service */,
-				7F9610E124B3307D0023C306 /* System */,
 				7F96111524B4859A0023C306 /* Scenes */,
 			);
 			path = "LOTR App";
@@ -255,6 +260,7 @@
 				7F9610C524B32BFC0023C306 /* BookList.storyboard */,
 				7F96111924B487AA0023C306 /* BookListViewController.swift */,
 				7F96111B24B487B50023C306 /* BookListViewModel.swift */,
+				7F96112824B5A65C0023C306 /* BookListContracts.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -273,6 +279,22 @@
 				7F96112224B48CB30023C306 /* AppRouter.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		7F96112424B5A5330023C306 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7F96112524B5A5390023C306 /* Presentations */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7F96112524B5A5390023C306 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				7F96112624B5A5440023C306 /* BookPresentation.swift */,
+			);
+			path = Presentations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,12 +409,14 @@
 				7F96110124B34D3C0023C306 /* CharacterResponses.swift in Sources */,
 				7F96111F24B48AA30023C306 /* TabBarController.swift in Sources */,
 				7F9610FF24B34D0E0023C306 /* ChapterResponses.swift in Sources */,
+				7F96112924B5A65C0023C306 /* BookListContracts.swift in Sources */,
 				7F96111C24B487B50023C306 /* BookListViewModel.swift in Sources */,
 				7F9610ED24B3394C0023C306 /* Books.swift in Sources */,
 				7F9610F924B34C730023C306 /* Character.swift in Sources */,
 				7F9610FB24B34CA80023C306 /* QuoteResponses.swift in Sources */,
 				7F9610EA24B331D30023C306 /* LOTRService.swift in Sources */,
 				7F9610F524B349060023C306 /* Movie.swift in Sources */,
+				7F96112724B5A5440023C306 /* BookPresentation.swift in Sources */,
 				7F9610F324B348DB0023C306 /* Quote.swift in Sources */,
 				7F9610E424B3319E0023C306 /* APIErrors.swift in Sources */,
 				7F9610FD24B34CD50023C306 /* MovieResponses.swift in Sources */,

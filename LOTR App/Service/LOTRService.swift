@@ -43,12 +43,10 @@ class LOTRService: LOTRServiceProtocol {
             if let _ = error {
                 completion(.failure(.failed))
             }
-            print(requestType.createURLString())
             guard let data = data else {
                 completion(.failure(.badRequest))
                 return
             }
-            print(data)
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(T.self, from: data)
