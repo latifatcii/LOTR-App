@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BookPresentation {
+final class BookPresentation: Equatable {
     
     let id, name: String
     
@@ -16,4 +16,9 @@ struct BookPresentation {
         self.id = book.id
         self.name = book.name
     }
+    
+    static func == (lhs: BookPresentation, rhs: BookPresentation) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name
+    }
+    
 }

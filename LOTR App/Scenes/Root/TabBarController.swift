@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        let bookVC = BookListViewController()
+        let bookVC = BookListSceneBuilder.build()
         bookVC.title = "Books"
         bookVC.tabBarItem = UITabBarItem(title: "Books", image: nil, tag: 0)
         let bookNC = UINavigationController(rootViewController: bookVC)

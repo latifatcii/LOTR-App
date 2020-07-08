@@ -19,24 +19,24 @@ class ResourceLoader {
         case character
     }
     
-    static func loadBook(resource: ResourceType) throws -> BooksResponses {
-        return try loadResource(resource: resource)
+    static func loadBook() throws -> BooksResponses {
+        return try loadResource(resource: .book)
     }
     
-    static func loadMovie(resource: ResourceType) throws -> MovieResponses {
-        return try loadResource(resource: resource)
+    static func loadMovie() throws -> MovieResponses {
+        return try loadResource(resource: .movie)
     }
     
-    static func loadQuote(resource: ResourceType) throws -> QuoteResponses {
-        return try loadResource(resource: resource)
+    static func loadQuote() throws -> QuoteResponses {
+        return try loadResource(resource: .quote)
     }
 
-    static func loadChapter(resource: ResourceType) throws -> ChapterResponses {
-        return try loadResource(resource: resource)
+    static func loadChapter() throws -> ChapterResponses {
+        return try loadResource(resource: .chapter)
     }
     
-    static func loadCharacter(resource: ResourceType) throws -> CharacterResponses {
-        return try loadResource(resource: resource)
+    static func loadCharacter() throws -> CharacterResponses {
+        return try loadResource(resource: .chapter)
     }
     
     static func loadResource<T: Decodable>(resource: ResourceType) throws -> T {

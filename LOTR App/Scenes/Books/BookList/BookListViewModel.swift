@@ -8,16 +8,17 @@
 
 import Foundation
 
+//This ViewModel responsible for BookListViewControllers business logic.
 final class BookListViewModel: BookListViewModelProtocol {
     
     weak var delegate: BookListViewModelDelegate?
     private let service: LOTRServiceProtocol
-    var books: [Books] = []
     
     init(_ service: LOTRServiceProtocol = LOTRService()) {
         self.service = service
     }
     
+    // MARK: - Fetch Data From Service
     func loadData() {
         delegate?.handleViewModelOutput(.setLoading(true))
         
@@ -27,9 +28,8 @@ final class BookListViewModel: BookListViewModelProtocol {
             
             switch result {
             case .success(let response):
-                self.books = response.books
-                let bookPresentation = response.books.map { BookPresentation(book: $0) }
-                self.delegate?.handleViewModelOutput(.showBookList(bookPresentation))
+                let bookPresentations = response.books.map { BookPresentation(book: $0) }
+                self.delegate?.handleViewModelOutput(.showBookList(bookPresentations))
             case .failure(let error):
                 self.delegate?.handleViewModelOutput(.error(error))
             }

@@ -13,7 +13,7 @@ protocol BookListViewModelProtocol {
     func loadData()
 }
 
-enum BookListViewModelOutput {
+enum BookListViewModelOutput: Equatable {
     case setLoading(Bool)
     case error(NetworkResponse)
     case showBookList([BookPresentation])
