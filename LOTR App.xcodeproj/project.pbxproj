@@ -44,6 +44,8 @@
 		7F96112F24B5D8560023C306 /* BookListSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96112E24B5D8560023C306 /* BookListSceneBuilder.swift */; };
 		7F96113124B5E19C0023C306 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96113024B5E19C0023C306 /* UIViewController + Extensions.swift */; };
 		7F96113324B5F6770023C306 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96113224B5F6770023C306 /* BaseViewController.swift */; };
+		7F96113824B6F6870023C306 /* MovieListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96113724B6F6870023C306 /* MovieListContracts.swift */; };
+		7F96113A24B6F7100023C306 /* MoviePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96113924B6F7100023C306 /* MoviePresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		7F96112E24B5D8560023C306 /* BookListSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListSceneBuilder.swift; sourceTree = "<group>"; };
 		7F96113024B5E19C0023C306 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		7F96113224B5F6770023C306 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7F96113724B6F6870023C306 /* MovieListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListContracts.swift; sourceTree = "<group>"; };
+		7F96113924B6F7100023C306 /* MoviePresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,7 @@
 			children = (
 				7F96111D24B489BD0023C306 /* Root */,
 				7F96111624B485E20023C306 /* Books */,
+				7F96113424B6F62B0023C306 /* Movie */,
 				7F96113224B5F6770023C306 /* BaseViewController.swift */,
 			);
 			path = Scenes;
@@ -305,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				7F96112624B5A5440023C306 /* BookPresentation.swift */,
+				7F96113924B6F7100023C306 /* MoviePresentation.swift */,
 			);
 			path = Presentations;
 			sourceTree = "<group>";
@@ -323,6 +329,30 @@
 				7F96112E24B5D8560023C306 /* BookListSceneBuilder.swift */,
 			);
 			path = SceneBuilders;
+			sourceTree = "<group>";
+		};
+		7F96113424B6F62B0023C306 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				7F96113524B6F6550023C306 /* MovieList */,
+				7F96113624B6F65C0023C306 /* MovieDetail */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		7F96113524B6F6550023C306 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				7F96113724B6F6870023C306 /* MovieListContracts.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		7F96113624B6F65C0023C306 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,7 +481,9 @@
 				7F9610F324B348DB0023C306 /* Quote.swift in Sources */,
 				7F9610E424B3319E0023C306 /* APIErrors.swift in Sources */,
 				7F9610FD24B34CD50023C306 /* MovieResponses.swift in Sources */,
+				7F96113824B6F6870023C306 /* MovieListContracts.swift in Sources */,
 				7F9610E624B331A90023C306 /* APISettings.swift in Sources */,
+				7F96113A24B6F7100023C306 /* MoviePresentation.swift in Sources */,
 				7F9610E824B331C40023C306 /* LOTRApi.swift in Sources */,
 				7F9610F124B33C2C0023C306 /* BooksResponses.swift in Sources */,
 				7F9610F724B34B6A0023C306 /* Chapter.swift in Sources */,
