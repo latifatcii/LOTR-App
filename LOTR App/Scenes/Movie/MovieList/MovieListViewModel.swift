@@ -37,7 +37,7 @@ final class MovieListViewModel: MovieListViewModelProtocol {
         }
     }
     
-    func deleteRows(at indexPath: IndexPath) {
+    func deleteRow(at indexPath: IndexPath) {
         movie.remove(at: indexPath.row)
     }
     

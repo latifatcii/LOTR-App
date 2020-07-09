@@ -12,7 +12,7 @@ protocol MovieListViewModelProtocol {
     var delegate: MovieListViewModelDelegate? { get set }
     var movie: [MoviePresentation] { get set }
     func loadData()
-    func deleteRows(at indexPath: IndexPath)
+    func deleteRow(at indexPath: IndexPath)
     func refreshData()
 }
 

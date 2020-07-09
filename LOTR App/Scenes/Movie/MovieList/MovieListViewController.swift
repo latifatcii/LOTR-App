@@ -75,5 +75,11 @@ extension MovieListViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteRow(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
 }

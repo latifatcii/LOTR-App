@@ -19,12 +19,12 @@ class TabBarController: UITabBarController {
     private func configureTabBar() {
         let bookVC = BookListSceneBuilder.build()
         bookVC.title = "Books"
-        bookVC.tabBarItem = UITabBarItem(title: "Book", image: nil, tag: 0)
+        bookVC.tabBarItem = UITabBarItem(title: "Book", image: UIImage(named: "book"), tag: 0)
         let bookNC = UINavigationController(rootViewController: bookVC)
         
         let movieVC = MovieListSceneBuilder.build()
         movieVC.title = "Movies"
-        movieVC.tabBarItem = UITabBarItem(title: "Movie", image: nil, tag: 1)
+        movieVC.tabBarItem = UITabBarItem(title: "Movie", image: UIImage(named: "movie"), tag: 1)
         let movieNC = UINavigationController(rootViewController: movieVC)
         
         viewControllers = [bookNC, movieNC]
