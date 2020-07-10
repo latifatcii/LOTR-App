@@ -32,6 +32,7 @@ class BookListViewController: BaseViewController {
 }
 //MARK: - Handle viewModels output
 extension BookListViewController: BookListViewModelDelegate {
+    
     func handleViewModelOutput(_ output: BookListViewModelOutput) {
         DispatchQueue.main.async {
             switch output {
@@ -44,13 +45,21 @@ extension BookListViewController: BookListViewModelDelegate {
             }
         }
     }
+    
+    func bookSceneRouter(_ router: BookListRouter) {
+        switch router {
+        case .bookListDetails(let viewM):
+            let vc = BookListDetailSceneBuilder.build(with: viewM)
+            show(vc, sender: nil)
+        }
+    }
 }
 //MARK: - UI Setups
 extension BookListViewController {
     
     private func configureTableView() {
         tableView.dataSource = self
-//        tableView.delegate = self
+        tableView.delegate = self
     }
     
     private func configureRefreshController() {
@@ -85,4 +94,12 @@ extension BookListViewController: UITableViewDataSource {
         }
     }
     
+}
+
+extension BookListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectBook(at: indexPath.row)
+    }
 }

@@ -14,6 +14,7 @@ protocol BookListViewModelProtocol {
     func loadData()
     func deleteRow(at indexPath: IndexPath)
     func refreshData()
+    func selectBook(at index: Int)
 }
 
 enum BookListViewModelOutput: Equatable {
@@ -24,5 +25,9 @@ enum BookListViewModelOutput: Equatable {
 
 protocol BookListViewModelDelegate: class {
     func handleViewModelOutput(_ output: BookListViewModelOutput)
-    
+    func bookSceneRouter(_ router: BookListRouter)
+}
+
+enum BookListRouter {
+    case bookListDetails(_ viewModel: BookListDetailViewModel)
 }

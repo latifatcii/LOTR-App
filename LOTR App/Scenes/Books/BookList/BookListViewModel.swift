@@ -10,7 +10,7 @@ import Foundation
 
 //This ViewModel responsible for BookListViewControllers business logic.
 final class BookListViewModel: BookListViewModelProtocol {
-    
+
     weak var delegate: BookListViewModelDelegate?
     private let service: LOTRServiceProtocol
     var books: [BookPresentation] = []
@@ -46,4 +46,9 @@ final class BookListViewModel: BookListViewModelProtocol {
         loadData()
     }
     
+    func selectBook(at index: Int) {
+        let book = books[index]
+        let viewModel = BookListDetailViewModel(book)
+        delegate?.bookSceneRouter(.bookListDetails(viewModel))
+    }
 }
