@@ -14,6 +14,7 @@ protocol MovieListViewModelProtocol {
     func loadData()
     func deleteRow(at indexPath: IndexPath)
     func refreshData()
+    func selectMovie(at index: Int)
 }
 
 enum MovieListViewModelOutput: Equatable {
@@ -24,4 +25,9 @@ enum MovieListViewModelOutput: Equatable {
 
 protocol MovieListViewModelDelegate: class {
     func handleViewModelOutput(_ output: MovieListViewModelOutput)
+    func movieSceneRouter(_ router: MovieListRouter)
+}
+
+enum MovieListRouter {
+    case movieListDetails(_ viewModel: MovieListDetailViewModel)
 }

@@ -27,6 +27,7 @@ class MovieListViewController: BaseViewController {
 }
 //MARK: - Handle viewModels output
 extension MovieListViewController: MovieListViewModelDelegate {
+
     
     func handleViewModelOutput(_ output: MovieListViewModelOutput) {
         DispatchQueue.main.async {
@@ -39,7 +40,14 @@ extension MovieListViewController: MovieListViewModelDelegate {
                 self.showAlert(with: "Error!!", error.rawValue)
             }
         }
-        
+    }
+    
+    func movieSceneRouter(_ router: MovieListRouter) {
+        switch router {
+        case .movieListDetails(let vm):
+            let vc = MovieListDetailSceneBuilder.build(with: vm)
+            show(vc, sender: nil)
+        }
     }
 }
 //MARK: - UI Setups
@@ -47,7 +55,7 @@ extension MovieListViewController {
     
     private func configureTableView() {
         tableView.dataSource = self
-        //        tableView.delegate = self
+        tableView.delegate = self
     }
     
     private func configureRefreshController() {
@@ -82,4 +90,12 @@ extension MovieListViewController: UITableViewDataSource {
         }
     }
     
+}
+
+extension MovieListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectMovie(at: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

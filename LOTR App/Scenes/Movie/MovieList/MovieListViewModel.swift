@@ -10,7 +10,7 @@ import Foundation
 
 //This ViewModel responsible for MovieListViewControllers business logic.
 final class MovieListViewModel: MovieListViewModelProtocol {
-    
+
     var delegate: MovieListViewModelDelegate?
     var movie: [MoviePresentation] = []
     var service: LOTRServiceProtocol
@@ -46,6 +46,9 @@ final class MovieListViewModel: MovieListViewModelProtocol {
         loadData()
     }
     
-    
+    func selectMovie(at index: Int) {
+        let vm = MovieListDetailViewModel(movie[index])
+        delegate?.movieSceneRouter(.movieListDetails(vm))
+    }
     
 }
