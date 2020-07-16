@@ -10,9 +10,6 @@ import UIKit
 
 class BookListViewController: BaseViewController {
     
-    //TODO
-    //Refresh and update
-    //Select index
     @IBOutlet weak var tableView: UITableView!
     
     //Sets viewModels delegate
@@ -25,7 +22,6 @@ class BookListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loadData()
-        configureTableView()
         tableView.refreshControl = refreshController
         configureRefreshController()
     }
@@ -57,11 +53,6 @@ extension BookListViewController: BookListViewModelDelegate {
 //MARK: - UI Setups
 extension BookListViewController {
     
-    private func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
     private func configureRefreshController() {
         refreshController.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
@@ -73,17 +64,25 @@ extension BookListViewController {
     }
 }
 
-extension BookListViewController: UITableViewDataSource {
+extension BookListViewController: UITableViewDataSource, BookListCellDelagete {
+    func favButtonTapped(indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? BookListCell
+        cell?.switchFavButtonImage()
+        viewModel.favBook(at: indexPath.row)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath)
-        cell.textLabel?.text = viewModel.books[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.books[indexPath.row].id
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath) as? BookListCell else { return UITableViewCell() }
         
+        cell.nameLabel?.text = viewModel.books[indexPath.row].name
+        cell.idLabel?.text = viewModel.books[indexPath.row].id
+        cell.delegate = self
+        cell.index = indexPath
         return cell
     }
     

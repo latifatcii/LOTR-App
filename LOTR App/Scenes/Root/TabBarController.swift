@@ -27,6 +27,10 @@ class TabBarController: UITabBarController {
         movieVC.tabBarItem = UITabBarItem(title: "Movie", image: UIImage(named: "movie"), tag: 1)
         let movieNC = UINavigationController(rootViewController: movieVC)
         
-        viewControllers = [bookNC, movieNC]
+        let favoriteVC = FavoritesSceneBuilder.build()
+        favoriteVC.title = "Favorites"
+        favoriteVC.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "bookmark"), tag: 2)
+        let favoriteNC = UINavigationController(rootViewController: favoriteVC)
+        viewControllers = [bookNC, movieNC, favoriteNC]
     }
 }

@@ -10,10 +10,11 @@ import Foundation
 
 //This ViewModel responsible for BookListViewControllers business logic.
 final class BookListViewModel: BookListViewModelProtocol {
-
+    
     weak var delegate: BookListViewModelDelegate?
     private let service: LOTRServiceProtocol
     var books: [BookPresentation] = []
+    let persistance = PersistanceManager()
     
     init(_ service: LOTRServiceProtocol = LOTRService()) {
         self.service = service
@@ -50,5 +51,9 @@ final class BookListViewModel: BookListViewModelProtocol {
         let book = books[index]
         let viewModel = BookListDetailViewModel(book)
         delegate?.bookSceneRouter(.bookListDetails(viewModel))
+    }
+    
+    func favBook(at index: Int) {
+        persistance.saveData(data: books[index]) 
     }
 }

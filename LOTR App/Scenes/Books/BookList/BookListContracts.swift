@@ -15,6 +15,7 @@ protocol BookListViewModelProtocol {
     func deleteRow(at indexPath: IndexPath)
     func refreshData()
     func selectBook(at index: Int)
+    func favBook(at index: Int)
 }
 
 enum BookListViewModelOutput: Equatable {
