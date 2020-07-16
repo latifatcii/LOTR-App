@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie List View Controller-->
+        <scene sceneID="0xQ-4D-FgP">
+            <objects>
+                <viewController storyboardIdentifier="MovieListViewController" id="G0M-qA-GHL" customClass="MovieListViewController" customModule="LOTR_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="whj-VF-Ve7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K81-6g-QRD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="MovieListCell" id="TkT-H9-TMU" customClass="MovieListCell" customModule="LOTR_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="41.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TkT-H9-TMU" id="Z5C-En-QQ4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-ah-kjk">
+                                                    <rect key="frame" x="30" y="0.0" width="364" height="41.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dIw-fR-T8S">
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="41.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xem-IA-9W8">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sav-tB-fiv">
+                                                                    <rect key="frame" x="0.0" y="21" width="45" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEl-Pb-ab2" userLabel="Fav Button">
+                                                            <rect key="frame" x="328" y="0.0" width="36" height="41.5"/>
+                                                            <state key="normal" image="star"/>
+                                                            <connections>
+                                                                <action selector="favButtonTapped:" destination="TkT-H9-TMU" eventType="touchUpInside" id="z7V-l4-cjc"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oEo-ah-kjk" secondAttribute="trailing" id="89c-0r-WAB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="oEo-ah-kjk" secondAttribute="bottom" constant="-11" id="IZ0-nm-0By"/>
+                                                <constraint firstItem="oEo-ah-kjk" firstAttribute="leading" secondItem="Z5C-En-QQ4" secondAttribute="leadingMargin" constant="10" id="r1J-zK-1dV"/>
+                                                <constraint firstItem="oEo-ah-kjk" firstAttribute="top" secondItem="Z5C-En-QQ4" secondAttribute="top" id="z2O-Op-PVs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favButton" destination="uEl-Pb-ab2" id="ZEh-bi-t9W"/>
+                                            <outlet property="idLabel" destination="sav-tB-fiv" id="FCZ-Ef-umR"/>
+                                            <outlet property="nameLabel" destination="xem-IA-9W8" id="xrT-lV-BSk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="G0M-qA-GHL" id="YZV-mu-NqE"/>
+                                    <outlet property="delegate" destination="G0M-qA-GHL" id="CeA-R3-LSh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VfO-7g-r9y" firstAttribute="bottom" secondItem="K81-6g-QRD" secondAttribute="bottom" id="49o-yT-Rhr"/>
+                            <constraint firstItem="K81-6g-QRD" firstAttribute="leading" secondItem="VfO-7g-r9y" secondAttribute="leading" id="GCF-kd-BtS"/>
+                            <constraint firstItem="VfO-7g-r9y" firstAttribute="trailing" secondItem="K81-6g-QRD" secondAttribute="trailing" id="U4F-Ke-6LP"/>
+                            <constraint firstItem="K81-6g-QRD" firstAttribute="top" secondItem="VfO-7g-r9y" secondAttribute="top" id="lGr-J4-Qu9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VfO-7g-r9y"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="K81-6g-QRD" id="HZQ-5s-fpe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pu-ob-dbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="141"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star" width="36" height="36"/>
+    </resources>
+</document>
