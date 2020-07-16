@@ -14,7 +14,7 @@ final class BookListViewModel: BookListViewModelProtocol {
     weak var delegate: BookListViewModelDelegate?
     private let service: LOTRServiceProtocol
     var books: [BookPresentation] = []
-    let persistance = PersistanceManager()
+    let persistance = BooksPersistanceManager()
     
     init(_ service: LOTRServiceProtocol = LOTRService()) {
         self.service = service

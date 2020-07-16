@@ -62,7 +62,7 @@
 		7F96116224BC44810023C306 /* MovieListDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116124BC44810023C306 /* MovieListDetailContracts.swift */; };
 		7F96116524BC54490023C306 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116424BC54490023C306 /* BookListCell.swift */; };
 		7F96116824BC72AC0023C306 /* Favorites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116624BC72AC0023C306 /* Favorites.xcdatamodeld */; };
-		7F96116B24BC8C750023C306 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116A24BC8C750023C306 /* PersistanceManager.swift */; };
+		7F96116B24BC8C750023C306 /* BooksPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116A24BC8C750023C306 /* BooksPersistanceManager.swift */; };
 		7F96116D24BC8C970023C306 /* PersistanceManagerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116C24BC8C970023C306 /* PersistanceManagerContracts.swift */; };
 		7F96117024BDE46C0023C306 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96116F24BDE46C0023C306 /* FavoritesViewController.swift */; };
 		7F96117224BDE4930023C306 /* FavoritesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F96117124BDE4930023C306 /* FavoritesList.storyboard */; };
@@ -70,6 +70,8 @@
 		7F96117624BDE4FC0023C306 /* FavoritesSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96117524BDE4FC0023C306 /* FavoritesSceneBuilder.swift */; };
 		7F96117824BDE81F0023C306 /* FavoritesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96117724BDE81F0023C306 /* FavoritesContracts.swift */; };
 		7F96117A24C0286F0023C306 /* PersistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96117924C0286F0023C306 /* PersistanceError.swift */; };
+		7FA8B23E24C07305002DAD25 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8B23D24C07305002DAD25 /* MovieListCell.swift */; };
+		7FA8B24024C07717002DAD25 /* MoviesPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8B23F24C07717002DAD25 /* MoviesPersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +144,7 @@
 		7F96116124BC44810023C306 /* MovieListDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListDetailContracts.swift; sourceTree = "<group>"; };
 		7F96116424BC54490023C306 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		7F96116724BC72AC0023C306 /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
-		7F96116A24BC8C750023C306 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		7F96116A24BC8C750023C306 /* BooksPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksPersistanceManager.swift; sourceTree = "<group>"; };
 		7F96116C24BC8C970023C306 /* PersistanceManagerContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManagerContracts.swift; sourceTree = "<group>"; };
 		7F96116F24BDE46C0023C306 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		7F96117124BDE4930023C306 /* FavoritesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesList.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,8 @@
 		7F96117524BDE4FC0023C306 /* FavoritesSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSceneBuilder.swift; sourceTree = "<group>"; };
 		7F96117724BDE81F0023C306 /* FavoritesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesContracts.swift; sourceTree = "<group>"; };
 		7F96117924C0286F0023C306 /* PersistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceError.swift; sourceTree = "<group>"; };
+		7FA8B23D24C07305002DAD25 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
+		7FA8B23F24C07717002DAD25 /* MoviesPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +407,7 @@
 		7F96113524B6F6550023C306 /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				7FA8B23C24C072F5002DAD25 /* Cells */,
 				7F96113F24B6F9BA0023C306 /* MovieList.storyboard */,
 				7F96113D24B6F91B0023C306 /* MovieListViewController.swift */,
 				7F96113B24B6F7F40023C306 /* MovieListViewModel.swift */,
@@ -433,9 +438,10 @@
 		7F96116924BC8C3F0023C306 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				7F96116A24BC8C750023C306 /* PersistanceManager.swift */,
+				7F96116A24BC8C750023C306 /* BooksPersistanceManager.swift */,
 				7F96116C24BC8C970023C306 /* PersistanceManagerContracts.swift */,
 				7F96117924C0286F0023C306 /* PersistanceError.swift */,
+				7FA8B23F24C07717002DAD25 /* MoviesPersistanceManager.swift */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -449,6 +455,14 @@
 				7F96117724BDE81F0023C306 /* FavoritesContracts.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7FA8B23C24C072F5002DAD25 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7FA8B23D24C07305002DAD25 /* MovieListCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +583,7 @@
 				7F96113124B5E19C0023C306 /* UIViewController + Extensions.swift in Sources */,
 				7F96112324B48CB30023C306 /* AppRouter.swift in Sources */,
 				7F96110124B34D3C0023C306 /* CharacterResponses.swift in Sources */,
+				7FA8B24024C07717002DAD25 /* MoviesPersistanceManager.swift in Sources */,
 				7F96113324B5F6770023C306 /* BaseViewController.swift in Sources */,
 				7F96116224BC44810023C306 /* MovieListDetailContracts.swift in Sources */,
 				7F96117A24C0286F0023C306 /* PersistanceError.swift in Sources */,
@@ -582,7 +597,7 @@
 				7F9610F924B34C730023C306 /* Character.swift in Sources */,
 				7F96117024BDE46C0023C306 /* FavoritesViewController.swift in Sources */,
 				7F96117624BDE4FC0023C306 /* FavoritesSceneBuilder.swift in Sources */,
-				7F96116B24BC8C750023C306 /* PersistanceManager.swift in Sources */,
+				7F96116B24BC8C750023C306 /* BooksPersistanceManager.swift in Sources */,
 				7F96115024B888110023C306 /* BookListDetailViewModel.swift in Sources */,
 				7F96115424B888350023C306 /* BookListDetailViewController.swift in Sources */,
 				7F96115E24BC43E60023C306 /* MovieListDetailSceneBuilder.swift in Sources */,
@@ -603,6 +618,7 @@
 				7F96113824B6F6870023C306 /* MovieListContracts.swift in Sources */,
 				7F9610E624B331A90023C306 /* APISettings.swift in Sources */,
 				7F96113A24B6F7100023C306 /* MoviePresentation.swift in Sources */,
+				7FA8B23E24C07305002DAD25 /* MovieListCell.swift in Sources */,
 				7F9610E824B331C40023C306 /* LOTRApi.swift in Sources */,
 				7F96114224B6FB9F0023C306 /* MovieListSceneBuilder.swift in Sources */,
 				7F9610F124B33C2C0023C306 /* BooksResponses.swift in Sources */,

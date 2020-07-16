@@ -12,9 +12,9 @@ final class FavoritesViewModel: FavoritesViewModelProtocol {
     
     var favBooks: [BookPresentation] = []
     weak var delegate: FavoritesViewModelDelegate?
-    var persistanceService: PersistanceManager
+    var persistanceService: BooksPersistanceManager
     
-    init(persistance: PersistanceManager = PersistanceManager()) {
+    init(persistance: BooksPersistanceManager = BooksPersistanceManager()) {
         self.persistanceService = persistance
     }
     

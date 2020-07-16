@@ -10,10 +10,11 @@ import Foundation
 
 //This ViewModel responsible for MovieListViewControllers business logic.
 final class MovieListViewModel: MovieListViewModelProtocol {
-
+    
     var delegate: MovieListViewModelDelegate?
     var movie: [MoviePresentation] = []
     var service: LOTRServiceProtocol
+    let persistanceManager = MoviesPersistanceManager()
     
     init(_ service: LOTRServiceProtocol = LOTRService()) {
         self.service = service
@@ -51,4 +52,28 @@ final class MovieListViewModel: MovieListViewModelProtocol {
         delegate?.movieSceneRouter(.movieListDetails(vm))
     }
     
+    func favMovie(at index: Int) {
+        persistanceManager.saveData(data: movie[index])
+    }
+    
+    func checkIfMovieFavorited(at index: Int, completion: @escaping ((Bool) -> Void)) {
+        persistanceManager.checkData(id: movie[index].id) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let isMovieFavorited):
+                completion(isMovieFavorited)
+            case.failure(let persistanceError):
+                print(persistanceError.rawValue)
+                self.delegate?.handleViewModelOutput(.error(.noData))
+            }
+        }
+    }
+    
+    func unFavBook(at index: Int) {
+        persistanceManager.removeData(id: movie[index].id) { [weak self] (persistanceError) in
+            guard let self = self else { return }
+            print(persistanceError.rawValue)
+            self.delegate?.handleViewModelOutput(.error(.badRequest))
+        }
+    }
 }

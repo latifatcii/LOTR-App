@@ -20,7 +20,6 @@ class MovieListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loadData()
-        configureTableView()
         tableView.refreshControl = refreshController
         configureRefreshController()
     }
@@ -52,11 +51,7 @@ extension MovieListViewController: MovieListViewModelDelegate {
 }
 //MARK: - UI Setups
 extension MovieListViewController {
-    
-    private func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
+
     
     private func configureRefreshController() {
         refreshController.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -69,16 +64,38 @@ extension MovieListViewController {
     }
 }
 
-extension MovieListViewController: UITableViewDataSource {
+extension MovieListViewController: UITableViewDataSource, BookListCellDelegate {
+    
+    func favButtonTapped(indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? MovieListCell
+        
+        viewModel.checkIfMovieFavorited(at: indexPath.row) { [weak self] (isFavorited) in
+            guard let self = self else { return }
+            
+            if isFavorited {
+                self.viewModel.unFavBook(at: indexPath.row)
+            } else {
+                self.viewModel.favMovie(at: indexPath.row)
+            }
+            
+            cell?.switchFavButtonImage(isMovieFavorited: isFavorited)
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.movie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell", for: indexPath)
-        cell.textLabel?.text = viewModel.movie[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.movie[indexPath.row].id
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell", for: indexPath) as? MovieListCell else { return UITableViewCell() }
+        
+        viewModel.checkIfMovieFavorited(at: indexPath.row) { (isFavorited) in
+            cell.switchFavButtonImage(isMovieFavorited: isFavorited)
+        }
+        cell.configureCellOutlets(movie: viewModel.movie[indexPath.row], index: indexPath)
+        cell.delegate = self
         
         return cell
     }

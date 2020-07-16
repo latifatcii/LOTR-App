@@ -15,6 +15,9 @@ protocol MovieListViewModelProtocol {
     func deleteRow(at indexPath: IndexPath)
     func refreshData()
     func selectMovie(at index: Int)
+    func favMovie(at index: Int)
+    func checkIfMovieFavorited(at index: Int, completion: @escaping((Bool) -> Void))
+    func unFavBook(at index: Int)
 }
 
 enum MovieListViewModelOutput: Equatable {
