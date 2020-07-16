@@ -11,7 +11,6 @@ import UIKit
 class BookListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     //Sets viewModels delegate
     var viewModel: BookListViewModelProtocol! {
         didSet {
@@ -38,8 +37,6 @@ extension BookListViewController: BookListViewModelDelegate {
                 self.tableView.reloadData()
             case .error(let error):
                 self.showAlert(with: "Error!!", error.rawValue)
-            case .isBookFavorited(let isBookFavorited):
-                print(isBookFavorited)
             }
         }
     }
@@ -66,12 +63,23 @@ extension BookListViewController {
     }
 }
 
-extension BookListViewController: UITableViewDataSource, BookListCellDelagete {
+extension BookListViewController: UITableViewDataSource, BookListCellDelegate {
     func favButtonTapped(indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? BookListCell
-        cell?.switchFavButtonImage()
-        viewModel.checkIfBookFavorited(at: indexPath.row)
-        viewModel.favBook(at: indexPath.row)
+        
+        viewModel.checkIfBookFavorited(at: indexPath.row) { [weak self] (isFav) in
+            guard let self = self else { return }
+            
+            if isFav {
+                self.viewModel.unFavBook(at: indexPath.row)
+            } else {
+                self.viewModel.favBook(at: indexPath.row)
+            }
+
+            cell?.switchFavButtonImage(isBookFavorited: isFav)
+            self.tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+
     }
     
     
@@ -82,10 +90,12 @@ extension BookListViewController: UITableViewDataSource, BookListCellDelagete {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath) as? BookListCell else { return UITableViewCell() }
         
-        cell.nameLabel?.text = viewModel.books[indexPath.row].name
-        cell.idLabel?.text = viewModel.books[indexPath.row].id
+        viewModel.checkIfBookFavorited(at: indexPath.row) { (isFav) in
+            cell.switchFavButtonImage(isBookFavorited: isFav)
+        }
+        
+        cell.configureCellOutlets(book: viewModel.books[indexPath.row], index: indexPath)
         cell.delegate = self
-        cell.index = indexPath
         return cell
     }
     
@@ -95,7 +105,6 @@ extension BookListViewController: UITableViewDataSource, BookListCellDelagete {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
 
 extension BookListViewController: UITableViewDelegate {

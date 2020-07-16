@@ -57,16 +57,24 @@ final class BookListViewModel: BookListViewModelProtocol {
         persistance.saveData(data: books[index]) 
     }
     
-    func checkIfBookFavorited(at index: Int) {
+    func checkIfBookFavorited(at index: Int, completion: @escaping((Bool) -> Void)) {
         persistance.checkData(id: books[index].id) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let booksCount):
-                self.delegate?.handleViewModelOutput(.isBookFavorited(booksCount))
+                completion(booksCount)
             case .failure(let persistanceError):
                 print(persistanceError.rawValue)
                 self.delegate?.handleViewModelOutput(.error(.noData))
             }
+        }
+    }
+    
+    func unFavBook(at index: Int) {
+        persistance.removeData(id: books[index].id) { [weak self] (persistanceError) in
+            guard let self = self else { return }
+            print(persistanceError.rawValue)
+            self.delegate?.handleViewModelOutput(.error(.badRequest))
         }
     }
 }

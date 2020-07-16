@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol BookListCellDelagete: class {
+protocol BookListCellDelegate: class {
     func favButtonTapped(indexPath: IndexPath)
 }
 
 final class BookListCell: UITableViewCell {
     
-    weak var delegate: BookListCellDelagete?
+    weak var delegate: BookListCellDelegate?
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
@@ -25,10 +25,17 @@ final class BookListCell: UITableViewCell {
         delegate?.favButtonTapped(indexPath: index)
     }
     
-    func switchFavButtonImage() {
-        if favButton.currentImage == UIImage(named: "star") {
-            print("aaa")
+    func configureCellOutlets(book: BookPresentation, index: IndexPath) {
+        nameLabel.text = book.name
+        idLabel.text = book.id
+        self.index = index
+    }
+    
+    func switchFavButtonImage(isBookFavorited: Bool) {
+        if isBookFavorited {
+            favButton.setImage(UIImage(named: "star.fill"), for: .normal)
+        } else {
+            favButton.setImage(UIImage(named: "star"), for: .normal)
         }
-        
     }
 }

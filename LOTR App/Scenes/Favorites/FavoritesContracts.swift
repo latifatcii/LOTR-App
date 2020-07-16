@@ -13,7 +13,6 @@ protocol FavoritesViewModelProtocol {
     var favBooks: [BookPresentation] { get set }
     func fetchData()
     func removeData(at index: Int)
-    
 }
 
 enum FavoritesViewModelOutput {
