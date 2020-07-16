@@ -38,6 +38,8 @@ extension BookListViewController: BookListViewModelDelegate {
                 self.tableView.reloadData()
             case .error(let error):
                 self.showAlert(with: "Error!!", error.rawValue)
+            case .isBookFavorited(let isBookFavorited):
+                print(isBookFavorited)
             }
         }
     }
@@ -68,6 +70,7 @@ extension BookListViewController: UITableViewDataSource, BookListCellDelagete {
     func favButtonTapped(indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as? BookListCell
         cell?.switchFavButtonImage()
+        viewModel.checkIfBookFavorited(at: indexPath.row)
         viewModel.favBook(at: indexPath.row)
     }
     

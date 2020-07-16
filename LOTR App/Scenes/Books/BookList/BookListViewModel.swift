@@ -56,4 +56,17 @@ final class BookListViewModel: BookListViewModelProtocol {
     func favBook(at index: Int) {
         persistance.saveData(data: books[index]) 
     }
+    
+    func checkIfBookFavorited(at index: Int) {
+        persistance.checkData(id: books[index].id) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let booksCount):
+                self.delegate?.handleViewModelOutput(.isBookFavorited(booksCount))
+            case .failure(let persistanceError):
+                print(persistanceError.rawValue)
+                self.delegate?.handleViewModelOutput(.error(.noData))
+            }
+        }
+    }
 }

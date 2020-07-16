@@ -48,8 +48,20 @@ final class PersistanceManager: PersistanceManagerProtocol {
         }
     }
     
-    func checkData(id: Int, completion: @escaping (Bool) -> ()) {
+    func checkData(id: String, completion: @escaping (Result<Bool,PersistanceError>) -> ()) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         
+        do {
+            let booksCount = try appDelegate.persistentContainer.viewContext.count(for: fetchRequest)
+            if booksCount > 0 {
+                completion(.success(true))
+            } else {
+                completion(.success(false))
+            }
+        } catch {
+            completion(.failure(.checkingError))
+        }
     }
 }
 

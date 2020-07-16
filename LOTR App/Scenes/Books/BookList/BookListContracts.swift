@@ -16,11 +16,13 @@ protocol BookListViewModelProtocol {
     func refreshData()
     func selectBook(at index: Int)
     func favBook(at index: Int)
+    func checkIfBookFavorited(at index: Int)
 }
 
 enum BookListViewModelOutput: Equatable {
     case setLoading(Bool)
     case error(NetworkResponse)
+    case isBookFavorited(Bool)
     case showBookList
 }
 

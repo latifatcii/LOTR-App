@@ -13,5 +13,5 @@ protocol PersistanceManagerProtocol {
     func saveData(data: T)
     func removeData(id: String, completion: @escaping(PersistanceError) -> ())
     func fetchData(completion: @escaping(Result<[T],PersistanceError>) -> ())
-    func checkData(id: Int, completion: @escaping(Bool) -> ())
+    func checkData(id: String, completion: @escaping(Result<Bool,PersistanceError>) -> ())
 }
