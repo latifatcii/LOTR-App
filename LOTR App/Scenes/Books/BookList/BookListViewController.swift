@@ -23,6 +23,7 @@ class BookListViewController: BaseViewController {
         viewModel.loadData()
         tableView.refreshControl = refreshController
         configureRefreshController()
+        tableView.register(UINib(nibName: "BaseTableViewCell", bundle: nil), forCellReuseIdentifier: "BaseTableViewCell")
     }
 }
 //MARK: - Handle viewModels output
@@ -63,9 +64,9 @@ extension BookListViewController {
     }
 }
 
-extension BookListViewController: UITableViewDataSource, BookListCellDelegate {
+extension BookListViewController: UITableViewDataSource, BaseCellDelegate {
     func favButtonTapped(indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? BookListCell
+        let cell = tableView.cellForRow(at: indexPath) as? BaseTableViewCell
         
         viewModel.checkIfBookFavorited(at: indexPath.row) { [weak self] (isFav) in
             guard let self = self else { return }
@@ -76,7 +77,7 @@ extension BookListViewController: UITableViewDataSource, BookListCellDelegate {
                 self.viewModel.favBook(at: indexPath.row)
             }
 
-            cell?.switchFavButtonImage(isBookFavorited: isFav)
+            cell?.switchFavButtonImage(isDataFavorited: isFav)
             self.tableView.reloadRows(at: [indexPath], with: .fade)
         }
 
@@ -88,13 +89,15 @@ extension BookListViewController: UITableViewDataSource, BookListCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath) as? BookListCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BaseTableViewCell", for: indexPath) as? BaseTableViewCell else { return UITableViewCell() }
         
         viewModel.checkIfBookFavorited(at: indexPath.row) { (isFav) in
-            cell.switchFavButtonImage(isBookFavorited: isFav)
+            cell.switchFavButtonImage(isDataFavorited: isFav)
         }
         
-        cell.configureCellOutlets(book: viewModel.books[indexPath.row], index: indexPath)
+        cell.nameLabel.text = viewModel.books[indexPath.row].name
+        cell.idLabel.text = viewModel.books[indexPath.row].id
+        cell.index = indexPath
         cell.delegate = self
         return cell
     }
