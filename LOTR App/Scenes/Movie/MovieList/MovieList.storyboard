@@ -11,7 +11,7 @@
         <!--Movie List View Controller-->
         <scene sceneID="0xQ-4D-FgP">
             <objects>
-                <viewController storyboardIdentifier="MovieListViewController" id="G0M-qA-GHL" customClass="MovieListViewController" customModule="LOTR_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G0M-qA-GHL" customClass="MovieListViewController" customModule="LOTR_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="whj-VF-Ve7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

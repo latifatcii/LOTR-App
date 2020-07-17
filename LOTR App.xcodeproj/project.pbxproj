@@ -72,6 +72,8 @@
 		7F96117A24C0286F0023C306 /* PersistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96117924C0286F0023C306 /* PersistanceError.swift */; };
 		7FA8B23E24C07305002DAD25 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8B23D24C07305002DAD25 /* MovieListCell.swift */; };
 		7FA8B24024C07717002DAD25 /* MoviesPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8B23F24C07717002DAD25 /* MoviesPersistanceManager.swift */; };
+		7FA8B24824C1B95C002DAD25 /* CustomTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA8B24724C1B95C002DAD25 /* CustomTabBar.storyboard */; };
+		7FA8B24A24C1BBD2002DAD25 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8B24924C1BBD2002DAD25 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 		7F96117924C0286F0023C306 /* PersistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceError.swift; sourceTree = "<group>"; };
 		7FA8B23D24C07305002DAD25 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
 		7FA8B23F24C07717002DAD25 /* MoviesPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPersistanceManager.swift; sourceTree = "<group>"; };
+		7FA8B24724C1B95C002DAD25 /* CustomTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomTabBar.storyboard; sourceTree = "<group>"; };
+		7FA8B24924C1BBD2002DAD25 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +357,8 @@
 			children = (
 				7F96111E24B48AA30023C306 /* TabBarController.swift */,
 				7F96112224B48CB30023C306 /* AppRouter.swift */,
+				7FA8B24724C1B95C002DAD25 /* CustomTabBar.storyboard */,
+				7FA8B24924C1BBD2002DAD25 /* TabBar.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				7F9610CC24B32BFE0023C306 /* LaunchScreen.storyboard in Resources */,
 				7F9610C924B32BFE0023C306 /* Assets.xcassets in Resources */,
 				7F96115224B888280023C306 /* BookListDetail.storyboard in Resources */,
+				7FA8B24824C1B95C002DAD25 /* CustomTabBar.storyboard in Resources */,
 				7F9610C724B32BFC0023C306 /* BookList.storyboard in Resources */,
 				7F96114024B6F9BA0023C306 /* MovieList.storyboard in Resources */,
 			);
@@ -616,6 +623,7 @@
 				7F9610E424B3319E0023C306 /* APIErrors.swift in Sources */,
 				7F9610FD24B34CD50023C306 /* MovieResponses.swift in Sources */,
 				7F96113824B6F6870023C306 /* MovieListContracts.swift in Sources */,
+				7FA8B24A24C1BBD2002DAD25 /* TabBar.swift in Sources */,
 				7F9610E624B331A90023C306 /* APISettings.swift in Sources */,
 				7F96113A24B6F7100023C306 /* MoviePresentation.swift in Sources */,
 				7FA8B23E24C07305002DAD25 /* MovieListCell.swift in Sources */,
